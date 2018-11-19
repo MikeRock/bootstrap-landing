@@ -14,7 +14,7 @@ export default {
   },
   devtool: 'cheap-source-map',
   devServer: {
-    contentBase: './build',
+    contentBase: './src',
     disableHostCheck: true,
     historyApiFallback: true,
     port: 8080

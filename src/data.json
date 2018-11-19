@@ -1,0 +1,18 @@
+{
+"cards": 
+  [
+    {"heading": "Header #1",
+     "icon": "fa-docker",
+     "content": "Lorem ipsum dolor amet master cleanse VHS umami, bicycle rights pour-over fingerstache helvetica mlkshk"},
+    {"heading": "Header #2",
+     "icon": "fa-react",
+     "content": "Lorem ipsum dolor amet master cleanse VHS umami, bicycle rights pour-over fingerstache helvetica mlkshk"},
+    {"heading": "Header #3",
+     "icon": "fa-js",
+     "content": "Lorem ipsum dolor amet master cleanse VHS umami, bicycle rights pour-over fingerstache helvetica mlkshk"},
+    {"heading": "Header #4",
+     "icon": "fa-aws",
+     "content": "Lorem ipsum dolor amet master cleanse VHS umami, bicycle rights pour-over fingerstache helvetica mlkshk"}
+  ],
+  "menu": [{"name":"About"},{"name":"Services"},{"name":"Portfolio"},{"name":"Contact"}]
+}

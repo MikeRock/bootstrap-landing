@@ -1,4 +1,4 @@
-// Global styling for this template
+// Global styling
 body,
 html {
   width: 100%;
@@ -39,7 +39,17 @@ h6 {
 .bg-primary {
   background-color: $primary !important;
 }
+.btn-hero {
+  background-color: transparent !important;
+  border: 3px solid $primary !important;
+  border-radius: 0px !important;
+  color: $primary !important;
+  &:active,
+  &:hover {
+    color: white !important;
+  }
 
+}
 .bg-dark {
   background-color: $gray-900 !important;
 }
@@ -47,19 +57,22 @@ h6 {
 .text-faded {
   color: fade-out($white, .3);
 }
-
+.line {
+  position: absolute;
+  height: 10px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background-image: linear-gradient(to right,  rgba(242,245,246,1) 0%,rgba(227,234,237,1) 37%,rgb(27, 85, 104) 100%); /* W3C */
+  background-repeat: repeat-x;
+}
 section {
   padding: 8rem 0;
 }
 
 .section-heading {
   margin-top: 0;
-}
-
-::-moz-selection {
-  color: $white;
-  background: $gray-900;
-  text-shadow: none;
+  @include pacifico-font;
 }
 
 ::selection {
@@ -69,11 +82,6 @@ section {
 }
 
 img::selection {
-  color: $white;
-  background: transparent;
-}
-
-img::-moz-selection {
   color: $white;
   background: transparent;
 }

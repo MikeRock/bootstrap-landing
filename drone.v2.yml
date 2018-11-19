@@ -1,0 +1,78 @@
+---
+kind: pipeline
+name: main
+
+steps:
+- name: version
+  image: docker
+  privileged: true
+  environment:
+    CONTAINER_NAME: bootstrap-app
+  volumes:
+  - name: host
+    path: /var/run/docker.sock
+  commands:
+  - docker --version
+  - /bin/bash -c "if [ $(docker ps -a | grep -c $CONTAINER_NAME) -gt 0 ]; \
+   then docker inspect serverless; fi"
+- name: test
+  image: node:latest
+  commands: 
+  - echo Git EVENT: $DRONE_BUILD_EVENT
+  - node -v
+  - npm -v
+  - npm install
+  - npm run test
+- name: build
+  image: node:latest
+  commands:
+  - npm run build
+  - npm run server
+
+branch: 
+- master
+
+volumes:
+- name: host
+  host:
+    path: /var/run/docker.sock
+
+trigger:
+  event:
+  - push
+
+---
+kind: pipeline
+name: error_log
+
+clone: 
+  disable: true
+
+steps:
+- name: log
+  image: plugins/slack
+  settings:
+    channel: dev
+    webhook: https://hooks.slack.com/services/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
+    username: drone
+    link_names: true
+    icon_url: https://xebialabs.com/assets/files/logos/droneio.jpg
+    template: >
+     {{#success build.status}}
+       Build {{build.number}} on branch {{build.branch}} Succeded.
+       Commit by {{build.author}}
+     {{else}}
+       Build {{build.number}} on branch {{build.branch}} Failed.
+       Commit by {{build.author}}
+     {{/success}}
+
+depends_on:
+- main
+trigger:
+  branch: master
+  status:
+  - failure
+  - success
+  
+  
+

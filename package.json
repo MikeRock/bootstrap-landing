@@ -1,10 +1,10 @@
 {
-  "name": "app3",
+  "name": "bootstrap-app",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo TEST SUCCESS",
     "start": "node server.js",
     "dev": "babel-node node_modules/.bin/webpack-dev-server --hot --watch",
     "build": "babel-node node_modules/.bin/webpack"

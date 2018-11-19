@@ -4,7 +4,7 @@
   -moz-transition: all 0.2s;
   transition: all 0.2s;
 }
-@mixin background-cover() {
+@mixin background-size-cover() {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -15,4 +15,7 @@
 }
 @mixin sans-serif-font() {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+@mixin pacifico-font() {
+  font-family: 'Pacifico', 'Helvetica Neue', Arial, sans-serif;
 }

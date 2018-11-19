@@ -1,10 +1,14 @@
 // Bootstrap overrides for this template
 .text-primary {
-  color: $primary !important;
+  color: $primary;
+}
+
+.container {
+  position: relative !important;
 }
 
 .btn {
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   border: none;
   border-radius: 200px !important;
@@ -12,7 +16,7 @@
 }
 
 .btn-xl {
-  padding: 1rem 2rem !important;
+  padding: 1rem 3rem !important;
 }
 
 .btn-primary {

@@ -9,15 +9,18 @@ pipeline:
   test:
     image: node:${NODE_VERSION}
     commands:
-      - echo Running $NODE_ENV mode
+      - echo Running in $NODE_ENV mode
       - npm -v
       - node -v
       - npm run test
     environment:
       - NODE_ENV: staging
+  build:
+    image: node:latest
+    commands: 
+      - npm run build
+      - npm run server
 matrix:
   NODE_VERSION:
     - latest
-    - 9
-    - 8
 branches: master

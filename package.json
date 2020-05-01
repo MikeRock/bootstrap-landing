@@ -7,7 +7,9 @@
     "test": "echo TEST SUCCESS",
     "start": "node server.js",
     "dev": "babel-node node_modules/.bin/webpack-dev-server --hot --watch",
-    "build": "babel-node node_modules/.bin/webpack"
+    "build": "babel-node node_modules/.bin/webpack",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "author": "",
   "license": "ISC",
@@ -57,6 +59,8 @@
     "passport-local": "^1.0.0",
     "passport-twitter": "^1.0.4",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
-  }
+    "react-dom": "^16.4.1",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
